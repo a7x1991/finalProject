@@ -15,6 +15,14 @@ class LoginPage extends Page {
         return $('._11lkb')
     }
 
+    get clickPlusDisabled () {
+        return $('._11lkb._4Irna')
+    }
+
+    get addToCart () {
+        return $x('//span[contains(text(),"Add to Cart")]')
+    }
+
     async clickShopNow() {
         await expect(this.shopNow).toBeExisting()
         await this.shopNow.click()
@@ -28,7 +36,15 @@ class LoginPage extends Page {
 
     async clickPlusButton() {
         await expect(this.clickPlus).toBeExisting()
-        await this.clickPlus.click(200)
+        await this.clickPlus.click()
+
+        // while (await this.clickPlus.isClickable()) {
+        //     await this.clickPlus.click()
+        //     if (await this.clickPlusDisabled.toBeExisting()) {
+        //         break;
+        //     }
+        // }
+            
     }
 
     // async login (username, password) {

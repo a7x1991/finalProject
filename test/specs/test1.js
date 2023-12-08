@@ -19,6 +19,7 @@ describe('Divergent V3', () => {
 describe('click the plus button', () => {
     it('it should click the plus botton till inventory is maxed out', async () => {
         await loginPage.clickPlusButton()
+        await browser.pause(10000)
     })
 })
 
