@@ -1,5 +1,6 @@
 import { $ } from '@wdio/globals'
 import Page from './page.js';
+import { browser } from '@wdio/globals'
 
 class LoginPage extends Page {
 
@@ -12,7 +13,7 @@ class LoginPage extends Page {
     }
 
     get clickPlus () {
-        return $('._11lkb')
+        return $('[data-hook="number-input-spinner-up-arrow"]')
     }
 
     get clickPlusDisabled () {
@@ -21,6 +22,14 @@ class LoginPage extends Page {
 
     get addToCart () {
         return $x('//span[contains(text(),"Add to Cart")]')
+    }
+
+    get hoverPlusIcon () {
+        return $('[data-hook="number-input-spinner-input"]')
+    }
+
+    get payPalPopup () {
+        return $('[data-hook="pmb-expanded-view"]')
     }
 
     async clickShopNow() {
@@ -35,7 +44,10 @@ class LoginPage extends Page {
     }
 
     async clickPlusButton() {
-        await expect(this.clickPlus).toBeExisting()
+        await this.payPalPopup.moveTo()
+        await browser.switchToFrame(2)
+        await this.hoverPlusIcon.moveTo()
+        await this.clickPlus.moveTo()
         await this.clickPlus.click()
 
         // while (await this.clickPlus.isClickable()) {
@@ -47,13 +59,7 @@ class LoginPage extends Page {
             
     }
 
-    // async login (username, password) {
-    //     await this.inputUsername.setValue(username)
-    //     await this.inputPassword.setValue(password)
-    //     await this.btnSubmit.click()
-    //     await expect(this.shoppingCart).toBeExisting()
-    // }
-    
+
 
     openUrl () {
         return super.openUrl();

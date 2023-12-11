@@ -6,6 +6,7 @@ import loginPage from '../pageobjects/login.page.js'
 describe('Shop now', () => {
     it('it should click the shop now tab', async () => {
         await LoginPage.openUrl()
+        await driver.maximizeWindow();
         await LoginPage.clickShopNow()
     })
 })
@@ -19,7 +20,6 @@ describe('Divergent V3', () => {
 describe('click the plus button', () => {
     it('it should click the plus botton till inventory is maxed out', async () => {
         await loginPage.clickPlusButton()
-        await browser.pause(10000)
     })
 })
 
