@@ -20,6 +20,9 @@ class LoginPage extends Page {
         return $('[data-hook="widget-view-cart-button"]')
     }
 
+    get myCartHeader () {
+        return $('//h1[contains(text(),"My cart")]')
+    }
     async clickShopNow () {
         await expect(this.shopNow).toBeExisting()
         await this.shopNow.click()
@@ -36,11 +39,16 @@ class LoginPage extends Page {
         await browser.switchToFrame(null)
         await this.addToCart.waitForClickable()
         await this.addToCart.click()
+        await browser.pause(6600)
     }
 
     async viewCartButton () {
+        await browser.switchToFrame(2)
         await expect(this.viewCart).toBeExisting()
+        await this.viewCart.waitForClickable()
         await this.viewCart.click()
+        await browser.switchToFrame(null)
+        await expect(this.myCartHeader).toBeExisting()
     }
 
     // async clickPlusButton() {
