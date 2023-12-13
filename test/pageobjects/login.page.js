@@ -39,7 +39,6 @@ class LoginPage extends Page {
         await browser.switchToFrame(null)
         await this.addToCart.waitForClickable()
         await this.addToCart.click()
-        await browser.pause(6600)
     }
 
     async viewCartButton () {
@@ -50,24 +49,6 @@ class LoginPage extends Page {
         await browser.switchToFrame(null)
         await expect(this.myCartHeader).toBeExisting()
     }
-
-    // async clickPlusButton() {
-    //     await this.payPalPopup.moveTo()
-    //     await browser.switchToFrame(2)
-    //     await this.hoverPlusIcon.moveTo()
-    //     await this.clickPlus.moveTo()
-    //     await this.clickPlus.click()
-
-        // while (await this.clickPlus.isClickable()) {
-        //     await this.clickPlus.click()
-        //     if (await this.clickPlusDisabled.toBeExisting()) {
-        //         break;
-        //     }
-        // }
-            
-    // }
-
-
 
     openUrl () {
         return super.openUrl();

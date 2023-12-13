@@ -1,6 +1,5 @@
 import { expect } from '@wdio/globals'
 import LoginPage from '../pageobjects/login.page.js'
-import loginPage from '../pageobjects/login.page.js'
 
 
 describe('Shop now', () => {
@@ -19,22 +18,12 @@ describe('Divergent V3', () => {
 
 describe('click the plus button', () => {
     it('it should click the add to cart button', async () => {
-        await loginPage.addToCartButton()
+        await LoginPage.addToCartButton()
     })
 })
 
 describe('click the view cart button', () => {
     it('it should click the view cart button', async () => {
-        await loginPage.viewCartButton()
+        await LoginPage.viewCartButton()
     })
 })
-
-// describe('Login successfully', () => {
-//     it('should login with valid credentials', async () => {
-//         await LoginPage.openUrl()
-//         await LoginPage.login('standard_user', 'secret_sauce')
-//         await expect(LoginPage.shoppingCart).toBeExisting() 
-//     })
-// })
-
-
