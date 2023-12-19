@@ -1,5 +1,5 @@
 import { expect } from '@wdio/globals'
-import addTwoSabersToCart from '../pageobjects/secondTest.page.js'
+import addTwoSabersToCart from '../pageobjects/addTwoSabers.js'
 
 
 describe('Shop now', () => {
