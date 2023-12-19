@@ -1,4 +1,3 @@
-import { expect } from '@wdio/globals'
 import addSaberFromPulldown from '../pageobjects/addSaberFromPulldown.js'
 
 

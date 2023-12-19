@@ -1,4 +1,3 @@
-import { expect } from '@wdio/globals'
 import searchSaber from '../pageobjects/searchSaber.js'
 
 
