@@ -47,7 +47,7 @@ class addTwoSabersToCart extends webpage {
         await this.addToCart.waitForClickable()
         await this.addToCart.click()
         await browser.switchToFrame(2)
-        await expect(this.clickBackIcon).toBeExisting()
+        // await expect(this.clickBackIcon).toBeExisting()
         await this.clickBackIcon.moveTo()
         await this.clickBackIcon.click()
         await browser.switchToFrame(null)

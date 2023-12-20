@@ -1,4 +1,3 @@
-import { expect } from '@wdio/globals'
 import addTwoSabersToCart from '../pageobjects/addTwoSabers.js'
 
 
